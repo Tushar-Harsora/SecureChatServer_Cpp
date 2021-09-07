@@ -361,3 +361,7 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+#ignore build of cpprestsdk
+/libs/*
+!libs/build_dependencies.sh
