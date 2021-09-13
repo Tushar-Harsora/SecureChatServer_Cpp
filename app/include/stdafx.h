@@ -3,6 +3,10 @@
 
 #pragma once
 
+#ifdef __INTELLISENSE__ 
+using __float128 = long double; // or some fake 128 bit floating point type
+#endif
+
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -22,7 +26,6 @@
 #include "cpprest/http_listener.h"
 #include "cpprest/uri.h"
 #include "cpprest/asyncrt_utils.h"
-#include "cpprest/json.h"
 #include "cpprest/filestream.h"
 #include "cpprest/containerstream.h"
 #include "cpprest/producerconsumerstream.h"
