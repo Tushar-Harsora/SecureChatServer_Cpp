@@ -19,3 +19,5 @@ The sample now runs on MacOS and Linux, Windows is not tested
 * Re-build the container after changing code: `docker-compose down && docker-compose build && docker-compose up`
 
 The very first build will take several minutes as it e.g. builds a more recent version of CMake from source. Subsequent builds will only re-compile the code in `/app`.
+
+Got solution for Connector https://stackoverflow.com/questions/41595751/running-mysql-connector-with-cmake-and-c

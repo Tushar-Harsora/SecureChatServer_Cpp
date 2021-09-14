@@ -30,8 +30,6 @@ private:
 
     void handle_post(http_request message);
 
-    void handle_delete(http_request message);
-
     http_listener listener;
 };
 
