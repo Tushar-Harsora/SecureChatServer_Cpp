@@ -8,5 +8,5 @@ RUN cd app/libs && ./build_dependencies.sh
 ADD . /app
 EXPOSE $PORT
 RUN cd /app && ls -la && cmake . && cmake --build .
-ENTRYPOINT ["bash", "-c", "./app/crest"]
+ENTRYPOINT ["bash", "-c", "./app/SecureChatServer"]
 
