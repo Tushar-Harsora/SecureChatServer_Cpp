@@ -2,6 +2,7 @@
 cmake-build-debug
 /libs/*
 !libs/build_dependencies.sh
+!libs/mysql-connector
 CMakeCache.txt
 CMakeFiles
 CMakeScripts

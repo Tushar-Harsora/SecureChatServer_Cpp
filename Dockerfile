@@ -5,7 +5,7 @@ RUN apt-get install -y libssl-dev
 RUN mkdir -p app/libs
 ADD libs/build_dependencies.sh app/libs
 RUN cd app/libs && ./build_dependencies.sh
-ADD libs/mysql-connector app/libs/
+COPY libs/mysql-connector app/libs/mysql-connector
 ADD . /app
 EXPOSE $PORT
 RUN cd /app && ls -la && cmake . && cmake --build .
