@@ -6,6 +6,5 @@ ADD libs/build_dependencies.sh app/libs
 RUN cd app/libs && ./build_dependencies.sh
 COPY libs/mysql-connector app/libs/mysql-connector
 ADD . /app
-EXPOSE $PORT
 RUN cd /app && ls -la && cmake . && cmake --build .
 ENTRYPOINT ["bash", "-c", "./app/SecureChatServer"]
