@@ -18,14 +18,12 @@ void handler::handle_get(http_request message) {
         KeyManager manager;
         string rep = SQLManager::the().get_driver_name();
         message.reply(status_codes::OK, rep);
+    }
+    if(parts[0] == "status"){
+        message.reply(status_codes::Accepted, "Server is up and Running!!");
     }else{
         message.reply(status_codes::BadRequest);
     }
-//    string body = message.extract_utf8string(true).get();
-//    nlohmann::json req = nlohmann::json::parse(body);
-//    for(auto& pr : req)
-//        ucout << pr << endl;
-    message.reply(status_codes::OK);
 };
 
 void handler::handle_post(http_request message) {
