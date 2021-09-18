@@ -1,4 +1,4 @@
-use server
+use sql6438173;
 
 create table Users(
     email varchar(1024),

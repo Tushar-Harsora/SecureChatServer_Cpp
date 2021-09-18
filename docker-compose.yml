@@ -1,20 +1,9 @@
 version: '3'
 services:
-  db:
-    image: percona:5.7
-    container_name: chat_database
-    environment:
-      - MYSQL_DATABASE=${DATABASE}
-      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
-    volumes:
-      - ./data:/docker-entrypoint-initdb.d
-    ports:
-      - 3306:3306
   web:
     build: .
     environment:
       - PORT=8080
+      - DATABASE_PASSWORD="${DATABASE_PASSWORD}"
     ports:
       - 8080:8080/tcp
-    depends_on:
-      - "db"
