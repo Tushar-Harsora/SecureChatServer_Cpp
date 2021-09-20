@@ -24,9 +24,11 @@ void start(const string_t &address) {
 
 void on_shutdown(int) {
     try {
-        cout << "Shutting down the Server...";
+        cout << "Shutting down the Server..." << endl;
         httpHandler->close().wait();
-    } catch(...) { }
+    } catch(...) {
+        cout << "In server on_shutdown catch handler" << endl;
+    }
     std::_Exit(0);
 }
 
@@ -34,6 +36,7 @@ int main(int argc, char *argv[]) {
 	const char* value = std::getenv("PORT");
 
 	if(value == nullptr){
+        cout << "Port not found from Environment Using 8080" << endl;
 	    value = "8080";
 	}
     utility::string_t port = U(value);
